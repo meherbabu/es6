@@ -1,0 +1,124 @@
+All these helpers work with Arrays only. to convert string to an array.. string.split("");
+
+1. ForEach
+2. Map
+3. Filter
+4. Find
+5. Every & Some
+6. Reducer helper
+7. Const, Let and Var
+8. Template Strings
+9. Fat Arrow Functions
+
+Ecma Script is the standard and JavaScript is the implementation.
+ES6 code -> Babel JS -> ES5.
+Array helper methods - forEach, map, filter, find, every, some, reduce
+
+forEach in Arrays:
+-----------------------
+
+var colors = ['red','blue'];
+
+colors.forEach ( function (color) {
+	console.log(color);
+});
+
+map Helper in Arrays:
+----------------------------
+var numbers = [1,2,3];
+var doubledNumbers =[];
+
+var doubledNumbers = numbers.map ( function (number) {
+	return number*2;
+} );
+
+Filter in Arrays:
+---------------------
+products.filter ( function (product) {
+  	return product.type == 'vegetable'
+});
+
+Find in Arrays:
+-------------------
+users.find ( function (user) {
+	return user.name === 'meher';
+} );
+
+var ladders = [
+  { id: 1, height: 20 },
+  { id: 3, height: 25 }
+];
+
+findWhere(ladders, { height: 25 }); // result: { id:3, height: 25 }
+
+function findWhere(array, criteria) {
+ const prop = Object.keys(criteria)[0];
+ return array.find ( function (elem) {
+   return elem[prop] === criteria[prop];
+ } );
+}
+
+Every in Arrays (Returns true only if all the properties matches) :
+----------------------------------------------------------------------------------------
+
+function findWhere(array, criteria) {
+ const props = Object.keys(criteria);
+ return array.find ( function (elem) {
+   return props.every ( function (prop) {
+   	return elem[prop] === criteria[prop];      
+   } );   
+ } );
+}
+
+Reduce helper in Arrays:
+---------------------------------
+numbers.reduce ( function (sum, number) {
+	return sum+number;
+}, 0 );
+
+))((
+
+function balancedParens(string){
+	return !string.split("").reduce (function (previous, char){
+    console.log (`${previous} ${char}`);
+		if (previous < 0 ) { return previous; }
+		if ( char === '(' ) { return ++previous; }
+		if ( char === ')' ) { return --previous; }
+		return previous;
+	},0);
+}
+
+balancedParens(')()(');
+
+Variable declarations with Const and Let:
+---------------------------------------------------------
+
+Template Strings in JavaScript:
+------------------------------------------
+` the year is ${ new Date().getFullYear()} `;
+
+Fat Arrow functions:
+----------------------------
+const add = (a,b) => a+b;
+
+numbers.map (number => number * 2);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
