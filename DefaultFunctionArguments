@@ -1,0 +1,19 @@
+ES 5;
+----
+
+function addOffset(style) {
+  if (!style) {
+    style = {}; 
+  }
+  
+  style.offset = '10px';
+  
+  return style;
+}
+
+ES 6:
+----
+function addOffset(style={}) { 
+  style.offset = '10px';  
+  return style;
+}
