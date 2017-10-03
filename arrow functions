@@ -1,0 +1,30 @@
+ES-5:
+----
+const team = {
+ 	members: ['abc', 'def'],
+  name : 'super team',
+  summary: function (){
+    var self = this;
+    return this.members.map ( function (member) {
+      return `${member} is a member of team ${self.name}`;
+    } );
+  }
+}
+
+team.summary();
+
+ES-6:
+----
+const team = {
+ 	members: ['abc', 'def'],
+  name : 'super team',
+  summary: function (){  
+    return this.members.map (member => `${member} is a member of team ${this.name}`);     
+  }
+}
+
+team.summary();
+
+
+Fat Arrow Functions make use of Lexical 'this'. The term Lexical 'this' means placement of 'this' depends on how it is evaluated. 
+Depending upon where we are using 'this' it will change. 
