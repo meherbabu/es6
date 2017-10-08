@@ -34,8 +34,11 @@ fileSummary(file, {color:'red'});
 ------------------------------------------------------------------------------------------------------------------
 De-structuring Arrays:
 -----------------------
-var companies = ['google','facebook','apple'];
-const [ name1, name2, name3, name4 ] = companies; // name1=google, name2=facebook, name3=apple,name4=undefined
+var companies = ['google','facebook','apple','company4'];
+const [ name1, name2, ...rest ] = companies; // name1=google, name2=facebook, rest = ['apple','company4'];
+
+
+
 
 
 
