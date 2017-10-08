@@ -1,0 +1,11 @@
+// Spread operator.. similar to var-args in java
+
+function add (...numbers){
+  	return numbers.reduce ( (sum, number) => {
+      return sum+number;
+    } , 0);
+}
+
+add (1,2,3,4,6);
+
+
