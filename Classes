@@ -1,0 +1,55 @@
+ES-5: (here Toyota extends Car)
+----
+
+function Car(options){
+ this.title = options.title; 
+}
+
+Car.prototype.drive = function(){
+ 	return "vroom"; 
+}
+
+function Toyota (options){
+ Car.call(this, options);
+ this.color = options.color; 
+}
+
+Toyota.prototype = Object.create(Car.prototype);
+Toyota.prototype.constructor=Toyota;
+
+Toyota.prototype.beep = function() {
+ return "beep"; 
+}
+
+const toyota = new Toyota ( {title: 'focus', color:'red'});
+toyota.drive();
+toyota.beep();
+                       
+                       
+ES6:
+---
+class Car{
+ 
+   constructor(options){
+     this.title = options.title;
+   }
+  
+   drive(){
+     return "vroom";
+   }
+}
+class Toyota extends Car{
+ 
+  constructor(options){
+    super(options);
+    this.color = options.color;
+  }
+  
+  honk(){
+    return "beep";
+  }
+}
+
+const car = new Toyota({title:'toyota',color:'red'});
+car.drive();
+car.honk();
