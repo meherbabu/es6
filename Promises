@@ -1,0 +1,42 @@
+There is no concept of sleeping in javascript. So to deal with long running processes, we need a way to figure out when the operation 
+is completed, is it error etc, for this Promise can be used.
+
+Terminology:
+-----------
+3 states of Promises
+
+Promise -> Unresolved (in progress) , Resolved (success) -> then callback, Rejected (failure) -> catch callback
+When the status of promise changes to resolved/rejected,the code in the corresponding callbacks gets executed automatically
+
+const promise = new Promise ((resolve, reject)=>{
+  resolve();
+});
+
+promise
+  .then( () => {
+    console.log('success');
+  }).catch( () => {
+    console.log('failed');
+  });
+  
+Fetch in javascript  returns a Promise...  
+
+fetch (url)
+  .then (response => response.json() )   // to get the actual data of response we should call this (which is really wierd)
+  .then (data => console.log(data) );
+  .catch (err => console.log(error) );
+  
+The only case when fetch hits out at catch block is only when it failed to make a network request 
+(means if domain doesnt exist or something like that).
+
+but the general expectation is if we have an error, catch block should be called. This is big problem with fetch.
+
+We can make use of libraries like Axios, JQuery etc to overcome this problem.
+
+
+  
+  
+  
+  
+
+
