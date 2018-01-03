@@ -1,2 +1,31 @@
 JSX:
 ----
+JSX will be transpiled to venilla javascript code by babel js.
+
+When we write ES6 code we have access to concept called JavaScript Modules. 
+
+JavaScript modules encapsulate the idea that all the code we write in separate files is silo-ed/separated from the other code that we write. 
+Code that is declared in other files will have zero contact with this file unless we explictly say we need access to that file.
+
+For this we should use ES6 import/export feature.
+
+ReactDOM vs React:
+---------------------------
+React: library knows how to work with the React Components, knows how to render them, knows how to nest them together.
+	   create and manages components
+ReactDOM: library used for the functionality of rendering them to DOM however, take a component and insert into DOM.
+		    actually used for interacting with the DOM.
+
+JSX Sample code:
+----------------------
+// Create a new component. This should produce some HTML.
+const App = function () { return ( <div>Hi..</div> ); }
+const App = () => { return <div> Hi.. </div> ; }
+App is a class. 
+To create an instance of App class we can use either <App /> or React.createElement("App"); and ReactDOM takes only instances of classes not class name.
+
+So to render the above element we should be using 
+ReactDOM.render ( <App />, document.querySelector(".container") ); (Take this  component's HTML and put into DOM)
+
+
+
