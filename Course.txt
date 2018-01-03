@@ -1,0 +1,122 @@
+Mockups for wire-framing: https://balsamiq.com/products/mockups/
+Technologies used: ReactJS, Webpack, BableJS, Lodash, ES6, react-redux, react-promise, axios
+
+Webpack/Bable compiles all the .js files in the project into a single compiled bundle.js file
+OpenWeatherMap - API for weather forecasting service.
+redux 
+react-redux
+redux promise - helps us resolve ajax requests inside our application
+axios - used for making ajax requests from browser
+react-sparklines - for generating a graph from a list of values
+redux-form - handles validating the input fields of a form, submitting a form etc.,
+react-router-dom - provides the Routing framework in ReactJS
+
+
+
+
+
+React is a javascript library that produces HTML.
+We write components (nothing but javascript functions), we will tell React to put this component (generated HTML) in DOM.
+
+import React from 'react';
+	-> It will import react library from node_modules folder. 
+React.render(App);
+	-> Tell React to add this App to DOM
+const App = function(){
+	return "<div>Hi...</div>"; ----> JSX --> here App is a class.
+}
+ReactDOM vs React:
+---------------------------
+Both are separate libraries.
+ReactDOM is used to interact with the actual DOM.
+React is used to create and manage components.
+
+ReactDOM -> its used for inserting an element into DOM
+React -> knows how to work with React components, how to render them
+
+so for adding an element into DOM, we should use ReactDOM instead of React
+
+so we should use ReactDOM.render(App) instead of React.render(App); but here App is a class and for render() method we should pass instance of App class.
+
+To create instance of App class, we should write <App></App> or <App />
+
+ReactDOM.render (<App />, document.querySelector("./container") );
+
+Types of components in React:
+-------------------------------------------
+Functional and class components.
+
+functional component is nothing a component that is defined as function
+class component - component thats created as a class.
+
+class CustomComponent extends React.Component{
+
+}
+
+All the custom components (class components in React) should have a render() method that returns JSX.
+
+Whenever we refer JS code in JSX, we should keep it in { } 
+
+Handling User Events:
+-----------------------------
+All the JSX events will be like onChange (on + name of html+js event) 
+
+Introduction to State:
+------------------------------
+Functional components dont have state only Class components have state.
+
+State: plain javascript object in react used to record events. Each class based component has its own state object. When a component state changes, it automatically re-renders(render function
+will be re-ran)
+
+We initialize the state by defining a constructor method and specifying state to default value in that constructor method.
+
+When we enter text in a text field, an event occurs. when an event occurs, in the onChange()  method, we assign it to state of a text field. When state change occurs,
+component re-renders and render() method is called.
+
+In constructors: this.state = { term: ''};
+
+In other methods: this.setState ({term :event.target.value}
+
+Controlled component: A component whose value is set by the State not the other way around. Our input tells what the state should be.
+A controlled component has its value set by State.
+
+We can even pass callbacks from parent component to child components (to any number of levels down)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

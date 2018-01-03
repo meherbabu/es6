@@ -1,0 +1,82 @@
+Questions:
+--------------
+1. React Component Life cycle - when does the componentDidMount() method runs.
+2. 
+
+
+Steps for a new requirement:
+----------------------------------------
+1. Create a new Component in React
+2. Decide whether the Component should be a Container or just a Component (If it needs to maintain state, then it should be a Container else Component)
+3. Create an Action Creator (which fetches/posts data and associates with an Action)
+4. We can associate the action with Component using mapDispatchToProps function.
+5. Create a reducer (based on action type deduce required data and set in the state)
+6. We can associate the state from reducer with Component using mapStateToProps function.
+
+
+
+
+React Router:
+-----------------
+react-router-dom
+
+<BrowserRouter>
+	<Route path="/home" component={Home} />
+	<Route path="/admin" component={Admin} />
+</BrowserRouter>
+
+Life cycle methods for rendering a react component:
+	-> componentDidMount() -> this method will be called immediately after rendering the component
+
+For Navigation from one Component to another Component:
+	<Link className="btn btn-primary" to="/posts/new">
+            Add a Post
+          </Link>
+
+Redux-Form:
+-----------------
+import {Field, reduxForm} from 'redux-form';
+
+reduxForm is a function which is identical to the connect function.
+reduxForm is somehow integrated with redux part of the application.
+
+There are some properties on the Field object which we can use.
+
+Redux form handles the state of the form, the values on the form, handles validations on the form but however it doesnot posting form data to the server.
+ReduxForm is responsible for handling the state and validation of our form.
+
+Form submission:
+------------------------
+handleSubmit() is the function provided by redux form which will take care of validations stuff.
+We pass our submit() function to the handleSubmit() function of reduxForm, once it performs the validations if its successful passes the control to our onSubmit() function
+with values() which consists of the values of the fields of the form.
+
+Form and Field States:
+-------------------------------
+pristine (field is not yet touched by user), touched (user entered some value and went to other field), invalid
+
+{Link} from react-router-dom is used for navigating between components.
+
+Navigation through Callbacks:
+----------------------------------------
+	<Route path="/home" component={Home} />
+
+When we have navigation using the Route tag, ReactJS passes a whole set of props to the Component Home, which will be used for navigation through callbacks.
+
+this.props.history.push("/");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
